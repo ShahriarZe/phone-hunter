@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Hunter</title>
+    <!-- DaisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.2/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <header>
+        <h2 class="text-5xl font-bold text-primary text-center mt-5 lg:mt-10 mb-10">Phone Hunter</h2>
+    </header>
+
+    <section class="bg-gray-100 p-4 m-4 container mx-auto ">
+        <input id="search-field" type="text" placeholder="Search here" class="input input-bordered w-3/4 mx-auto" />
+        <button onclick="handleSerach()" class="btn btn-primary m-4">SEARCH</button>
+    </section>
+
+
+    <main class="container mx-auto mt-8">
+        <section>
+            <div id="loading-spinner" class="text-center my-40 hidden">
+                <span class="loading loading-dots loading-lg"></span>
+            </div>
+            <div id="phone-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            </div>
+            <!-- Load More button -->
+            <div class="hidden text-center my-8" id="show-all-container">
+                <button onclick="handleShowAll()" class="btn btn-active btn-primary">SHOW ALL</button>
+            </div>
+        </section>
+
+        <!-- MODAL -->
+        <!-- Open the modal using ID.showModal() method -->
+
+        <dialog id="show_details_modal" class="modal modal-bottom sm:modal-middle text-center">
+            <form method="dialog" class="modal-box block items-center justify-center">
+                <h3 id="show-detail-phone-name" class="font-bold text-3xl"></h3>
+                <div id="show-detail-container" class="block items-center justify-center">
+
+                </div>
+                <div class="modal-action">
+                    <!-- if there is a button in form, it will close the modal -->
+                    <button class="btn btn-primary">Close</button>
+                </div>
+            </form>
+        </dialog>
+    </main>
+
+    <footer>
+
+    </footer>
+</body>
+<script src="js/phone.js "></script>
+
+</html>
